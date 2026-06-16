@@ -11,16 +11,16 @@ analyzing LLM answers against real-world information to enhance reliability.
 
 *   Identifies and isolates specific, verifiable statements within an
     LLM-generated text.
-*   Determines accuracy of claims using web search tools and knowledge it is
+*   Determines the accuracy of claims using web search tools and knowledge
     trained on.
 *   Produces a clear breakdown listing identified claims with their verification
     status.
 *   Optionally rewrites original responses to correct inaccuracies based on
     verified findings.
 
-This sample agent enables a user to query an LLM and the agent audits the
+This sample agent enables a user to query an LLM, and the agent audits the
 corresponding answer by extracting claims, utilizing search tools for
-verification, generating an audit report, and optionally re-writing the
+verification, generating an audit report, and optionally rewriting the
 response.
 
 ## Agent Details
@@ -90,7 +90,7 @@ uv run adk web
 Select **llm_auditor** in the UI. Example prompts:
 
 *   `Double check this: Earth is further away from the Sun than Mars.`
-*   `Q: Why the blueberries are blue? A: Because blueberries have pigments on
+*   `Q: Why are the blueberries are blue? A: Because blueberries have pigments on
     their skin.`
 
 Sampled responses of these requests are shown below in the [Example
