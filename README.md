@@ -20,7 +20,7 @@ analyzing LLM answers against real-world information to enhance reliability.
 
 This sample agent enables a user to query an LLM and the agent audits the
 corresponding answer by extracting claims, utilizing search tools for
-verification, generating an audit report, and optionally re-writing the
+verification, generating an audit report, and optionally rewriting the
 response.
 
 ## Agent Details
