@@ -90,7 +90,7 @@ uv run adk web
 Select **llm_auditor** in the UI. Example prompts:
 
 *   `Double check this: Earth is further away from the Sun than Mars.`
-*   `Q: Why the blueberries are blue? A: Because blueberries have pigments on
+*   `Q: Why are the blueberries are blue? A: Because blueberries have pigments on
     their skin.`
 
 Sampled responses of these requests are shown below in the [Example
