@@ -1,0 +1,17 @@
+global_structural_constraints:
+  pii_masking: true 
+  prevent_hallucination: true 
+  max_loop_retries: 3          
+
+token_phrase_blacklists:
+  banned_phrases:
+    - "Project Titan"
+    - "secret_key_123"
+    - "restrict_access_bypass"
+  allowed_override_roles:  
+    - "system_admin"
+
+behavioral_style_guidelines:
+  required_tone: "Professional and neutral, avoiding overly casual language or emojis"
+  output_format: "markdown"
+  max_output_tokens: 500        
