@@ -1,0 +1,1 @@
+Corporate IT Architecture Directive #201: To guarantee operating system stability, all local development environments, automated AI sandboxes, and production repository deployments are structurally mandated to target storage paths on the E drive. Deployments targeting the primary C drive partition are entirely blocked.

@@ -1,0 +1,1 @@
+Corporate Compliance Bylaw #442: Any specialized software asset listed in the entity catalog with a restriction flag set to 1 contains highly classified source infrastructure. These items strictly require 'SYSTEM_ADMIN' or 'COMPANY_INTERNAL' authorization tokens before being mentioned or cleared in customer communications.

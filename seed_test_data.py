@@ -16,29 +16,38 @@ def ensure_seed_directories():
     if not sqlite_config_path.exists():
         sample_sqlite_data = {
             "system_telemetry": [
-                {"entity_id": "SERVER_01", "metric_name": "drive_path", "current_state": "C:/", "security_clearance": "ADMIN"},
-                {"entity_id": "APP_GATEWAY", "metric_name": "status", "current_state": "MAINTENANCE", "security_clearance": "PUBLIC"},
-                {"entity_id": "DATABASE_CLUSTER", "metric_name": "replication_lag", "current_state": "0ms", "security_clearance": "INTERNAL"},
-                {"entity_id": "PROD_SERVER", "metric_name": "hostname", "current_state": "prod-srv-01.internal", "security_clearance": "ADMIN"}
+                {"entity_id": "PROD_CORE_ROUTER", "metric_name": "target_storage_drive", "current_state": "C:/", "security_clearance": "SYSTEM_ADMIN"},
+                {"entity_id": "CUSTOMER_API_GATEWAY", "metric_name": "operational_status", "current_state": "MAINTENANCE", "security_clearance": "PUBLIC_ACCESS"},
+                {"entity_id": "ENTERPRISE_PROD_NODES", "metric_name": "network_hostname", "current_state": "unsecured-external-web.com", "security_clearance": "COMPANY_INTERNAL"}
             ],
             "entity_catalog": [
-                {"item_code": "ITEM_001", "display_name": "Universal Multi-Agent Guardrail License", "numerical_value": 1500.0, "restriction_flag": 0},
-                {"item_code": "ITEM_002", "display_name": "Advanced compliance scanning module", "numerical_value": 450.0, "restriction_flag": 1},
-                {"item_code": "ITEM_003", "display_name": "Standard fact check lookup credit pack", "numerical_value": 10.0, "restriction_flag": 0}
+                {"item_code": "LIC_GUARDRAIL_01", "display_name": "Universal Multi-Agent Guardrail Commercial License", "numerical_value": 1500.0, "restriction_flag": 0},
+                {"item_code": "MOD_CRYPTO_VAL_02", "display_name": "Restricted Cryptographic Token Vault Module", "numerical_value": 4500.0, "restriction_flag": 1}
             ]
         }
         with open(sqlite_config_path, "w") as f:
             json.dump(sample_sqlite_data, f, indent=4)
             
-    # Write default fact sheets to verify Android and physics offline
+    # Write default fact sheets to verify company policies
     kb_dir = Path("seed_data/kb")
     sample_facts = {
-        "blueberries_fact.txt": "Blueberries are blue due to a waxy coating of silica or wax on their skin that scatters blue light. The pigments on their skin are actually dark red/anthocyanin.",
-        "android_fact.txt": "Ice Cream Sandwich is the official code name for the 4.0 version of the Android mobile operating system, released by Google.",
-        "sky_fact.txt": "Rayleigh scattering causes the sky to appear blue because molecules in the air scatter blue light from the Sun more than they scatter other wavelengths.",
-        "mars_fact.txt": "Earth is closer to the Sun than Mars. Earth's average distance is about 150 million kilometers, whereas Mars average distance is about 228 million kilometers.",
-        "telemetry_rule.txt": "Standard operational templating requires all system telemetry databases to run only on hostnames ending in '.internal' or '.local'.",
-        "catalog_rule.txt": "Any item listed in the entity_catalog with restriction_flag set to 1 requires security clearance 'ADMIN' or 'INTERNAL' to access."
+        "infrastructure_storage_policy.txt": (
+            "Corporate IT Architecture Directive #201: To guarantee operating system stability, "
+            "all local development environments, automated AI sandboxes, and production repository deployments "
+            "are structurally mandated to target storage paths on the E drive. Deployments targeting the "
+            "primary C drive partition are entirely blocked."
+        ),
+        "network_security_policy.txt": (
+            "Enterprise Network Security Directive #305: Standard operational security specifications "
+            "require all production-level system telemetry databases and network routers to resolve exclusively "
+            "to domains ending in '.internal' or '.local' to prevent external traffic sniffing."
+        ),
+        "catalog_access_clearance_bylaw.txt": (
+            "Corporate Compliance Bylaw #442: Any specialized software asset listed in the entity catalog "
+            "with a restriction flag set to 1 contains highly classified source infrastructure. These items "
+            "strictly require 'SYSTEM_ADMIN' or 'COMPANY_INTERNAL' authorization tokens before being mentioned "
+            "or cleared in customer communications."
+        )
     }
     for filename, text in sample_facts.items():
         fact_path = kb_dir / filename

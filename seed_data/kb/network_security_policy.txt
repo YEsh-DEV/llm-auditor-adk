@@ -1,0 +1,1 @@
+Enterprise Network Security Directive #305: Standard operational security specifications require all production-level system telemetry databases and network routers to resolve exclusively to domains ending in '.internal' or '.local' to prevent external traffic sniffing.

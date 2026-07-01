@@ -1,0 +1,36 @@
+{
+    "system_telemetry": [
+        {
+            "entity_id": "PROD_CORE_ROUTER",
+            "metric_name": "target_storage_drive",
+            "current_state": "C:/",
+            "security_clearance": "SYSTEM_ADMIN"
+        },
+        {
+            "entity_id": "CUSTOMER_API_GATEWAY",
+            "metric_name": "operational_status",
+            "current_state": "MAINTENANCE",
+            "security_clearance": "PUBLIC_ACCESS"
+        },
+        {
+            "entity_id": "ENTERPRISE_PROD_NODES",
+            "metric_name": "network_hostname",
+            "current_state": "unsecured-external-web.com",
+            "security_clearance": "COMPANY_INTERNAL"
+        }
+    ],
+    "entity_catalog": [
+        {
+            "item_code": "LIC_GUARDRAIL_01",
+            "display_name": "Universal Multi-Agent Guardrail Commercial License",
+            "numerical_value": 1500.0,
+            "restriction_flag": 0
+        },
+        {
+            "item_code": "MOD_CRYPTO_VAL_02",
+            "display_name": "Restricted Cryptographic Token Vault Module",
+            "numerical_value": 4500.0,
+            "restriction_flag": 1
+        }
+    ]
+}
