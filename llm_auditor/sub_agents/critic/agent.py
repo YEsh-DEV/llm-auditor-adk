@@ -2,9 +2,11 @@
 
 """Critic agent for identifying and verifying statements using search tools."""
 
+import os
 from google.adk import Agent
 from google.adk.agents.callback_context import CallbackContext
 from google.adk.models import LlmResponse
+from google.adk.models.lite_llm import LiteLlm
 from google.adk.tools import google_search
 from google.genai import types
 
@@ -49,7 +51,7 @@ def _render_reference(
 
 
 critic_agent = Agent(
-    model="gemini-2.5-flash",
+    model=LiteLlm(model=os.getenv("OLLAMA_MODEL", "ollama_chat/llama3")),
     name="critic_agent",
     instruction=prompt.CRITIC_PROMPT,
     tools=[google_search],
